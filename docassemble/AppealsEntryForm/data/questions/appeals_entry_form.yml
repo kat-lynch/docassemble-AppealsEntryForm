@@ -67,7 +67,7 @@ code: |
   al_form_type = "appeal" 
 ---
 objects:
-  - users: ALPeopleList.using(there_are_any=True)
+  - users: ALPeopleList.using(ask_number=True,target_number=1)
 ---
 sections:
   - review_appeals_entry_form: Review your answers
@@ -89,7 +89,7 @@ code: |
   set_progress(25)
   case_name
   appellant_name
-  appellant_is_commenweath
+  appellant_is_commonwealth
   set_progress(50)
   notice_of_assembly_received_date
   interview_order_appeals_entry_form = True
@@ -154,7 +154,7 @@ id: Fee information
 question: |
   Fee information?
 fields:
-  - "Appellant is commonwealth": appellant_is_commenweath
+  - "Appellant is commonwealth": appellant_is_commonwealth
     datatype: yesno
   - "Fee waiver requested": fee_waiver_requested
     datatype: yesno
@@ -199,10 +199,10 @@ event: review_appeals_entry_form
 question: |
   Review your answers
 review:
-  - Edit: appellant_is_commenweath
+  - Edit: appellant_is_commonwealth
     button: |
-      **Appellant is commenwealth**:
-      ${ word(yesno(appellant_is_commenweath)) }
+      **Appellant is commonwealth**:
+      ${ word(yesno(appellant_is_commonwealth)) }
   - Edit: appellant_name
     button: |
       **Appellant name**:
